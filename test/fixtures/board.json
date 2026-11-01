@@ -1,0 +1,50 @@
+{
+ "ok": true,
+ "date": "2027-01-01",
+ "money": 1440.6599999999999,
+ "daily": [],
+ "cash": [
+  {
+   "day": "2027-01-01",
+   "balance": 2000
+  }
+ ],
+ "modules": {},
+ "routes": [
+  {
+   "id": "rt_1792391226221_6",
+   "from": "上海浦东",
+   "to": "拉萨贡嘎",
+   "km": 2967,
+   "demand": 1042,
+   "wk": null
+  },
+  {
+   "id": "rt_1792391227334_7",
+   "from": "拉萨贡嘎",
+   "to": "上海浦东",
+   "km": 2967,
+   "demand": 1042,
+   "wk": null
+  }
+ ],
+ "fuel": {
+  "price": 2.969013418490409,
+  "history": [
+   {
+    "day": null,
+    "price": 2.969
+   }
+  ],
+  "consumedYesterday": 0,
+  "consumedToday": 0,
+  "remaining": 1000000,
+  "capacity": 1000000
+ },
+ "delay": {
+  "med": 0,
+  "sev": 0
+ },
+ "reputation": 22.414213562373096,
+ "fleet": 2
+}

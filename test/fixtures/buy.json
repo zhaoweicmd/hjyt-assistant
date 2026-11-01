@@ -1,0 +1,1565 @@
+{
+ "ok": true,
+ "module": "passenger",
+ "date": "2027-01-01",
+ "money": 1440.6599999999999,
+ "online": true,
+ "fuel": {
+  "remaining": 1000000,
+  "capacity": 1000000,
+  "price": 2.969013418490409,
+  "consumedYesterday": 0,
+  "consumedToday": 0
+ },
+ "fleet": {
+  "count": 2,
+  "legsDay0": 0,
+  "kmDay0": 0,
+  "fcAvg": 4.8,
+  "avgKmPerLeg": 1200,
+  "seatAvg": 135,
+  "wideCount": 0
+ },
+ "models": [
+  {
+   "name": "CRJ-700",
+   "seats": 70,
+   "range": 3600,
+   "cruiseSpeed": 700,
+   "fuelConsumption": 2.71,
+   "isWideBody": false,
+   "category": "regional",
+   "basePrice": 170,
+   "price": 170,
+   "eq": {
+    "version": 1,
+    "winglets": false,
+    "engineProfile": "standard",
+    "wifi": false,
+    "ptv": false
+   },
+   "quote": {
+    "totalPrice": 0,
+    "equipmentCost": 0,
+    "installationCost": 0,
+    "changes": []
+   },
+   "caps": {
+    "supported": false,
+    "winglets": false,
+    "wifi": false,
+    "ptv": false,
+    "engineProfiles": [
+     "standard"
+    ]
+   }
+  },
+  {
+   "name": "ERJ-190",
+   "seats": 100,
+   "range": 4500,
+   "cruiseSpeed": 700,
+   "fuelConsumption": 2.86,
+   "isWideBody": false,
+   "category": "regional",
+   "basePrice": 300,
+   "price": 300,
+   "eq": {
+    "version": 1,
+    "winglets": false,
+    "engineProfile": "standard",
+    "wifi": false,
+    "ptv": false
+   },
+   "quote": {
+    "totalPrice": 0,
+    "equipmentCost": 0,
+    "installationCost": 0,
+    "changes": []
+   },
+   "caps": {
+    "supported": false,
+    "winglets": false,
+    "wifi": false,
+    "ptv": false,
+    "engineProfiles": [
+     "standard"
+    ]
+   }
+  },
+  {
+   "name": "C909",
+   "seats": 90,
+   "range": 3700,
+   "cruiseSpeed": 700,
+   "fuelConsumption": 3.01,
+   "isWideBody": false,
+   "category": "regional",
+   "basePrice": 250,
+   "price": 250,
+   "eq": {
+    "version": 1,
+    "winglets": false,
+    "engineProfile": "standard",
+    "wifi": false,
+    "ptv": false
+   },
+   "quote": {
+    "totalPrice": 0,
+    "equipmentCost": 0,
+    "installationCost": 0,
+    "changes": []
+   },
+   "caps": {
+    "supported": false,
+    "winglets": false,
+    "wifi": false,
+    "ptv": false,
+    "engineProfiles": [
+     "standard"
+    ]
+   }
+  },
+  {
+   "name": "B737-800",
+   "seats": 176,
+   "range": 5190,
+   "cruiseSpeed": 750,
+   "fuelConsumption": 3.71,
+   "isWideBody": false,
+   "category": "narrow",
+   "basePrice": 580,
+   "price": 580,
+   "eq": {
+    "version": 1,
+    "winglets": true,
+    "engineProfile": "efficiency",
+    "wifi": true,
+    "ptv": true
+   },
+   "quote": {
+    "totalPrice": 165.3,
+    "equipmentCost": 150.8,
+    "installationCost": 14.5,
+    "changes": [
+     "winglets",
+     "wifi",
+     "ptv",
+     "engineProfile"
+    ]
+   },
+   "caps": {
+    "supported": true,
+    "winglets": true,
+    "wifi": true,
+    "ptv": true,
+    "engineProfiles": [
+     "standard",
+     "efficiency",
+     "reliability"
+    ]
+   }
+  },
+  {
+   "name": "B737 MAX 8",
+   "seats": 180,
+   "range": 6570,
+   "cruiseSpeed": 750,
+   "fuelConsumption": 3.56,
+   "isWideBody": false,
+   "category": "narrow",
+   "basePrice": 700,
+   "price": 700,
+   "eq": {
+    "version": 1,
+    "winglets": true,
+    "engineProfile": "efficiency",
+    "wifi": true,
+    "ptv": true
+   },
+   "quote": {
+    "totalPrice": 139.3,
+    "equipmentCost": 126,
+    "installationCost": 13.3,
+    "changes": [
+     "wifi",
+     "ptv",
+     "engineProfile"
+    ]
+   },
+   "caps": {
+    "supported": true,
+    "winglets": false,
+    "wifi": true,
+    "ptv": true,
+    "engineProfiles": [
+     "standard",
+     "efficiency",
+     "reliability"
+    ]
+   }
+  },
+  {
+   "name": "A319",
+   "seats": 140,
+   "range": 6950,
+   "cruiseSpeed": 750,
+   "fuelConsumption": 3.42,
+   "isWideBody": false,
+   "category": "narrow",
+   "basePrice": 550,
+   "price": 550,
+   "eq": {
+    "version": 1,
+    "winglets": false,
+    "engineProfile": "standard",
+    "wifi": false,
+    "ptv": false
+   },
+   "quote": {
+    "totalPrice": 0,
+    "equipmentCost": 0,
+    "installationCost": 0,
+    "changes": []
+   },
+   "caps": {
+    "supported": false,
+    "winglets": false,
+    "wifi": false,
+    "ptv": false,
+    "engineProfiles": [
+     "standard"
+    ]
+   }
+  },
+  {
+   "name": "A320neo",
+   "seats": 168,
+   "range": 6300,
+   "cruiseSpeed": 750,
+   "fuelConsumption": 3.13,
+   "isWideBody": false,
+   "category": "narrow",
+   "basePrice": 680,
+   "price": 680,
+   "eq": {
+    "version": 1,
+    "winglets": true,
+    "engineProfile": "efficiency",
+    "wifi": true,
+    "ptv": true
+   },
+   "quote": {
+    "totalPrice": 135.32,
+    "equipmentCost": 122.4,
+    "installationCost": 12.92,
+    "changes": [
+     "wifi",
+     "ptv",
+     "engineProfile"
+    ]
+   },
+   "caps": {
+    "supported": true,
+    "winglets": false,
+    "wifi": true,
+    "ptv": true,
+    "engineProfiles": [
+     "standard",
+     "efficiency",
+     "reliability"
+    ]
+   }
+  },
+  {
+   "name": "A321neo",
+   "seats": 210,
+   "range": 7400,
+   "cruiseSpeed": 750,
+   "fuelConsumption": 4.02,
+   "isWideBody": false,
+   "category": "narrow",
+   "basePrice": 800,
+   "price": 800,
+   "eq": {
+    "version": 1,
+    "winglets": true,
+    "engineProfile": "efficiency",
+    "wifi": true,
+    "ptv": true
+   },
+   "quote": {
+    "totalPrice": 159.2,
+    "equipmentCost": 144,
+    "installationCost": 15.2,
+    "changes": [
+     "wifi",
+     "ptv",
+     "engineProfile"
+    ]
+   },
+   "caps": {
+    "supported": true,
+    "winglets": false,
+    "wifi": true,
+    "ptv": true,
+    "engineProfiles": [
+     "standard",
+     "efficiency",
+     "reliability"
+    ]
+   }
+  },
+  {
+   "name": "C919",
+   "seats": 160,
+   "range": 5555,
+   "cruiseSpeed": 750,
+   "fuelConsumption": 3.6,
+   "isWideBody": false,
+   "category": "narrow",
+   "basePrice": 650,
+   "price": 650,
+   "eq": {
+    "version": 1,
+    "winglets": true,
+    "engineProfile": "efficiency",
+    "wifi": true,
+    "ptv": true
+   },
+   "quote": {
+    "totalPrice": 129.35,
+    "equipmentCost": 117,
+    "installationCost": 12.35,
+    "changes": [
+     "wifi",
+     "ptv",
+     "engineProfile"
+    ]
+   },
+   "caps": {
+    "supported": true,
+    "winglets": false,
+    "wifi": true,
+    "ptv": true,
+    "engineProfiles": [
+     "standard",
+     "efficiency",
+     "reliability"
+    ]
+   }
+  },
+  {
+   "name": "B787-9",
+   "seats": 280,
+   "range": 15370,
+   "cruiseSpeed": 850,
+   "fuelConsumption": 7.54,
+   "isWideBody": true,
+   "category": "midWide",
+   "basePrice": 1800,
+   "price": 1800,
+   "eq": {
+    "version": 1,
+    "winglets": true,
+    "engineProfile": "efficiency",
+    "wifi": true,
+    "ptv": true
+   },
+   "quote": {
+    "totalPrice": 358.2,
+    "equipmentCost": 324,
+    "installationCost": 34.2,
+    "changes": [
+     "wifi",
+     "ptv",
+     "engineProfile"
+    ]
+   },
+   "caps": {
+    "supported": true,
+    "winglets": false,
+    "wifi": true,
+    "ptv": true,
+    "engineProfiles": [
+     "standard",
+     "efficiency",
+     "reliability"
+    ]
+   }
+  },
+  {
+   "name": "B787-10",
+   "seats": 330,
+   "range": 13890,
+   "cruiseSpeed": 850,
+   "fuelConsumption": 7.75,
+   "isWideBody": true,
+   "category": "midWide",
+   "basePrice": 2200,
+   "price": 2200,
+   "eq": {
+    "version": 1,
+    "winglets": true,
+    "engineProfile": "efficiency",
+    "wifi": true,
+    "ptv": true
+   },
+   "quote": {
+    "totalPrice": 437.8,
+    "equipmentCost": 396,
+    "installationCost": 41.8,
+    "changes": [
+     "wifi",
+     "ptv",
+     "engineProfile"
+    ]
+   },
+   "caps": {
+    "supported": true,
+    "winglets": false,
+    "wifi": true,
+    "ptv": true,
+    "engineProfiles": [
+     "standard",
+     "efficiency",
+     "reliability"
+    ]
+   }
+  },
+  {
+   "name": "A330-300",
+   "seats": 290,
+   "range": 11750,
+   "cruiseSpeed": 850,
+   "fuelConsumption": 8.04,
+   "isWideBody": true,
+   "category": "midWide",
+   "basePrice": 1700,
+   "price": 1700,
+   "eq": {
+    "version": 1,
+    "winglets": true,
+    "engineProfile": "efficiency",
+    "wifi": true,
+    "ptv": true
+   },
+   "quote": {
+    "totalPrice": 338.3,
+    "equipmentCost": 306,
+    "installationCost": 32.3,
+    "changes": [
+     "wifi",
+     "ptv",
+     "engineProfile"
+    ]
+   },
+   "caps": {
+    "supported": true,
+    "winglets": false,
+    "wifi": true,
+    "ptv": true,
+    "engineProfiles": [
+     "standard",
+     "efficiency",
+     "reliability"
+    ]
+   }
+  },
+  {
+   "name": "A330-900",
+   "seats": 300,
+   "range": 13250,
+   "cruiseSpeed": 850,
+   "fuelConsumption": 7.18,
+   "isWideBody": true,
+   "category": "midWide",
+   "basePrice": 2000,
+   "price": 2000,
+   "eq": {
+    "version": 1,
+    "winglets": true,
+    "engineProfile": "efficiency",
+    "wifi": true,
+    "ptv": true
+   },
+   "quote": {
+    "totalPrice": 398,
+    "equipmentCost": 360,
+    "installationCost": 38,
+    "changes": [
+     "wifi",
+     "ptv",
+     "engineProfile"
+    ]
+   },
+   "caps": {
+    "supported": true,
+    "winglets": false,
+    "wifi": true,
+    "ptv": true,
+    "engineProfiles": [
+     "standard",
+     "efficiency",
+     "reliability"
+    ]
+   }
+  },
+  {
+   "name": "A350-900",
+   "seats": 330,
+   "range": 15900,
+   "cruiseSpeed": 900,
+   "fuelConsumption": 8.03,
+   "isWideBody": true,
+   "category": "largeWide",
+   "basePrice": 2500,
+   "price": 2500,
+   "eq": {
+    "version": 1,
+    "winglets": true,
+    "engineProfile": "efficiency",
+    "wifi": true,
+    "ptv": true
+   },
+   "quote": {
+    "totalPrice": 497.5,
+    "equipmentCost": 450,
+    "installationCost": 47.5,
+    "changes": [
+     "wifi",
+     "ptv",
+     "engineProfile"
+    ]
+   },
+   "caps": {
+    "supported": true,
+    "winglets": false,
+    "wifi": true,
+    "ptv": true,
+    "engineProfiles": [
+     "standard",
+     "efficiency",
+     "reliability"
+    ]
+   }
+  },
+  {
+   "name": "A350-1000",
+   "seats": 390,
+   "range": 16850,
+   "cruiseSpeed": 900,
+   "fuelConsumption": 9,
+   "isWideBody": true,
+   "category": "largeWide",
+   "basePrice": 3000,
+   "price": 3000,
+   "eq": {
+    "version": 1,
+    "winglets": true,
+    "engineProfile": "efficiency",
+    "wifi": true,
+    "ptv": true
+   },
+   "quote": {
+    "totalPrice": 597,
+    "equipmentCost": 540,
+    "installationCost": 57,
+    "changes": [
+     "wifi",
+     "ptv",
+     "engineProfile"
+    ]
+   },
+   "caps": {
+    "supported": true,
+    "winglets": false,
+    "wifi": true,
+    "ptv": true,
+    "engineProfiles": [
+     "standard",
+     "efficiency",
+     "reliability"
+    ]
+   }
+  },
+  {
+   "name": "B777-300ER",
+   "seats": 390,
+   "range": 13890,
+   "cruiseSpeed": 900,
+   "fuelConsumption": 10.64,
+   "isWideBody": true,
+   "category": "largeWide",
+   "basePrice": 2700,
+   "price": 2700,
+   "eq": {
+    "version": 1,
+    "winglets": false,
+    "engineProfile": "efficiency",
+    "wifi": true,
+    "ptv": true
+   },
+   "quote": {
+    "totalPrice": 537.3,
+    "equipmentCost": 486,
+    "installationCost": 51.3,
+    "changes": [
+     "wifi",
+     "ptv",
+     "engineProfile"
+    ]
+   },
+   "caps": {
+    "supported": true,
+    "winglets": false,
+    "wifi": true,
+    "ptv": true,
+    "engineProfiles": [
+     "standard",
+     "efficiency",
+     "reliability"
+    ]
+   }
+  },
+  {
+   "name": "B777-9",
+   "seats": 410,
+   "range": 14820,
+   "cruiseSpeed": 900,
+   "fuelConsumption": 9.67,
+   "isWideBody": true,
+   "category": "largeWide",
+   "basePrice": 3300,
+   "price": 3300,
+   "eq": {
+    "version": 1,
+    "winglets": false,
+    "engineProfile": "efficiency",
+    "wifi": true,
+    "ptv": true
+   },
+   "quote": {
+    "totalPrice": 656.7,
+    "equipmentCost": 594,
+    "installationCost": 62.7,
+    "changes": [
+     "wifi",
+     "ptv",
+     "engineProfile"
+    ]
+   },
+   "caps": {
+    "supported": true,
+    "winglets": false,
+    "wifi": true,
+    "ptv": true,
+    "engineProfiles": [
+     "standard",
+     "efficiency",
+     "reliability"
+    ]
+   }
+  },
+  {
+   "name": "B747-8",
+   "seats": 470,
+   "range": 14815,
+   "cruiseSpeed": 900,
+   "fuelConsumption": 13.77,
+   "isWideBody": true,
+   "category": "quad",
+   "basePrice": 4500,
+   "price": 4500,
+   "eq": {
+    "version": 1,
+    "winglets": false,
+    "engineProfile": "efficiency",
+    "wifi": true,
+    "ptv": true
+   },
+   "quote": {
+    "totalPrice": 895.5,
+    "equipmentCost": 810,
+    "installationCost": 85.5,
+    "changes": [
+     "wifi",
+     "ptv",
+     "engineProfile"
+    ]
+   },
+   "caps": {
+    "supported": true,
+    "winglets": false,
+    "wifi": true,
+    "ptv": true,
+    "engineProfiles": [
+     "standard",
+     "efficiency",
+     "reliability"
+    ]
+   }
+  },
+  {
+   "name": "A380-800",
+   "seats": 525,
+   "range": 14800,
+   "cruiseSpeed": 900,
+   "fuelConsumption": 16.33,
+   "isWideBody": true,
+   "category": "quad",
+   "basePrice": 5800,
+   "price": 5800,
+   "eq": {
+    "version": 1,
+    "winglets": false,
+    "engineProfile": "standard",
+    "wifi": false,
+    "ptv": false
+   },
+   "quote": {
+    "totalPrice": 0,
+    "equipmentCost": 0,
+    "installationCost": 0,
+    "changes": []
+   },
+   "caps": {
+    "supported": false,
+    "winglets": false,
+    "wifi": false,
+    "ptv": false,
+    "engineProfiles": [
+     "standard"
+    ]
+   }
+  },
+  {
+   "name": "ATR 72-600",
+   "seats": 78,
+   "range": 1665,
+   "cruiseSpeed": 550,
+   "fuelConsumption": 1.87,
+   "isWideBody": false,
+   "category": "regional",
+   "basePrice": 370,
+   "price": 370,
+   "eq": {
+    "version": 1,
+    "winglets": false,
+    "engineProfile": "standard",
+    "wifi": false,
+    "ptv": false
+   },
+   "quote": {
+    "totalPrice": 0,
+    "equipmentCost": 0,
+    "installationCost": 0,
+    "changes": []
+   },
+   "caps": {
+    "supported": false,
+    "winglets": false,
+    "wifi": false,
+    "ptv": false,
+    "engineProfiles": [
+     "standard"
+    ]
+   }
+  },
+  {
+   "name": "Dash 8-400",
+   "seats": 90,
+   "range": 1596,
+   "cruiseSpeed": 670,
+   "fuelConsumption": 2,
+   "isWideBody": false,
+   "category": "regional",
+   "basePrice": 240,
+   "price": 240,
+   "eq": {
+    "version": 1,
+    "winglets": false,
+    "engineProfile": "standard",
+    "wifi": false,
+    "ptv": false
+   },
+   "quote": {
+    "totalPrice": 0,
+    "equipmentCost": 0,
+    "installationCost": 0,
+    "changes": []
+   },
+   "caps": {
+    "supported": false,
+    "winglets": false,
+    "wifi": false,
+    "ptv": false,
+    "engineProfiles": [
+     "standard"
+    ]
+   }
+  },
+  {
+   "name": "CRJ900",
+   "seats": 90,
+   "range": 2956,
+   "cruiseSpeed": 830,
+   "fuelConsumption": 2.4,
+   "isWideBody": false,
+   "category": "regional",
+   "basePrice": 300,
+   "price": 300,
+   "eq": {
+    "version": 1,
+    "winglets": false,
+    "engineProfile": "standard",
+    "wifi": false,
+    "ptv": false
+   },
+   "quote": {
+    "totalPrice": 0,
+    "equipmentCost": 0,
+    "installationCost": 0,
+    "changes": []
+   },
+   "caps": {
+    "supported": false,
+    "winglets": false,
+    "wifi": false,
+    "ptv": false,
+    "engineProfiles": [
+     "standard"
+    ]
+   }
+  },
+  {
+   "name": "B737-700",
+   "seats": 145,
+   "range": 5370,
+   "cruiseSpeed": 840,
+   "fuelConsumption": 3.45,
+   "isWideBody": false,
+   "category": "narrow",
+   "basePrice": 540,
+   "price": 540,
+   "eq": {
+    "version": 1,
+    "winglets": true,
+    "engineProfile": "efficiency",
+    "wifi": true,
+    "ptv": true
+   },
+   "quote": {
+    "totalPrice": 153.9,
+    "equipmentCost": 140.4,
+    "installationCost": 13.5,
+    "changes": [
+     "winglets",
+     "wifi",
+     "ptv",
+     "engineProfile"
+    ]
+   },
+   "caps": {
+    "supported": true,
+    "winglets": true,
+    "wifi": true,
+    "ptv": true,
+    "engineProfiles": [
+     "standard",
+     "efficiency",
+     "reliability"
+    ]
+   }
+  },
+  {
+   "name": "B737 MAX 9",
+   "seats": 200,
+   "range": 6570,
+   "cruiseSpeed": 840,
+   "fuelConsumption": 3.55,
+   "isWideBody": false,
+   "category": "narrow",
+   "basePrice": 800,
+   "price": 800,
+   "eq": {
+    "version": 1,
+    "winglets": true,
+    "engineProfile": "efficiency",
+    "wifi": true,
+    "ptv": true
+   },
+   "quote": {
+    "totalPrice": 159.2,
+    "equipmentCost": 144,
+    "installationCost": 15.2,
+    "changes": [
+     "wifi",
+     "ptv",
+     "engineProfile"
+    ]
+   },
+   "caps": {
+    "supported": true,
+    "winglets": false,
+    "wifi": true,
+    "ptv": true,
+    "engineProfiles": [
+     "standard",
+     "efficiency",
+     "reliability"
+    ]
+   }
+  },
+  {
+   "name": "B757-200",
+   "seats": 230,
+   "range": 7222,
+   "cruiseSpeed": 850,
+   "fuelConsumption": 4.8,
+   "isWideBody": false,
+   "category": "narrow",
+   "basePrice": 570,
+   "price": 570,
+   "eq": {
+    "version": 1,
+    "winglets": true,
+    "engineProfile": "efficiency",
+    "wifi": true,
+    "ptv": true
+   },
+   "quote": {
+    "totalPrice": 162.45,
+    "equipmentCost": 148.2,
+    "installationCost": 14.25,
+    "changes": [
+     "winglets",
+     "wifi",
+     "ptv",
+     "engineProfile"
+    ]
+   },
+   "caps": {
+    "supported": true,
+    "winglets": true,
+    "wifi": true,
+    "ptv": true,
+    "engineProfiles": [
+     "standard",
+     "efficiency",
+     "reliability"
+    ]
+   }
+  },
+  {
+   "name": "A320-200",
+   "seats": 168,
+   "range": 5700,
+   "cruiseSpeed": 840,
+   "fuelConsumption": 3.65,
+   "isWideBody": false,
+   "category": "narrow",
+   "basePrice": 600,
+   "price": 600,
+   "eq": {
+    "version": 1,
+    "winglets": true,
+    "engineProfile": "efficiency",
+    "wifi": true,
+    "ptv": true
+   },
+   "quote": {
+    "totalPrice": 171,
+    "equipmentCost": 156,
+    "installationCost": 15,
+    "changes": [
+     "winglets",
+     "wifi",
+     "ptv",
+     "engineProfile"
+    ]
+   },
+   "caps": {
+    "supported": true,
+    "winglets": true,
+    "wifi": true,
+    "ptv": true,
+    "engineProfiles": [
+     "standard",
+     "efficiency",
+     "reliability"
+    ]
+   }
+  },
+  {
+   "name": "A321XLR",
+   "seats": 210,
+   "range": 8700,
+   "cruiseSpeed": 840,
+   "fuelConsumption": 3.85,
+   "isWideBody": false,
+   "category": "narrow",
+   "basePrice": 1020,
+   "price": 1020,
+   "eq": {
+    "version": 1,
+    "winglets": true,
+    "engineProfile": "efficiency",
+    "wifi": true,
+    "ptv": true
+   },
+   "quote": {
+    "totalPrice": 202.98,
+    "equipmentCost": 183.6,
+    "installationCost": 19.38,
+    "changes": [
+     "wifi",
+     "ptv",
+     "engineProfile"
+    ]
+   },
+   "caps": {
+    "supported": true,
+    "winglets": false,
+    "wifi": true,
+    "ptv": true,
+    "engineProfiles": [
+     "standard",
+     "efficiency",
+     "reliability"
+    ]
+   }
+  },
+  {
+   "name": "Tu-204-100",
+   "seats": 195,
+   "range": 7000,
+   "cruiseSpeed": 850,
+   "fuelConsumption": 5.2,
+   "isWideBody": false,
+   "category": "narrow",
+   "basePrice": 450,
+   "price": 450,
+   "eq": {
+    "version": 1,
+    "winglets": false,
+    "engineProfile": "standard",
+    "wifi": false,
+    "ptv": false
+   },
+   "quote": {
+    "totalPrice": 0,
+    "equipmentCost": 0,
+    "installationCost": 0,
+    "changes": []
+   },
+   "caps": {
+    "supported": false,
+    "winglets": false,
+    "wifi": false,
+    "ptv": false,
+    "engineProfiles": [
+     "standard"
+    ]
+   }
+  },
+  {
+   "name": "Yak-42",
+   "seats": 120,
+   "range": 3900,
+   "cruiseSpeed": 750,
+   "fuelConsumption": 4.5,
+   "isWideBody": false,
+   "category": "narrow",
+   "basePrice": 400,
+   "price": 400,
+   "eq": {
+    "version": 1,
+    "winglets": false,
+    "engineProfile": "standard",
+    "wifi": false,
+    "ptv": false
+   },
+   "quote": {
+    "totalPrice": 0,
+    "equipmentCost": 0,
+    "installationCost": 0,
+    "changes": []
+   },
+   "caps": {
+    "supported": false,
+    "winglets": false,
+    "wifi": false,
+    "ptv": false,
+    "engineProfiles": [
+     "standard"
+    ]
+   }
+  },
+  {
+   "name": "MD-87",
+   "seats": 139,
+   "range": 5100,
+   "cruiseSpeed": 800,
+   "fuelConsumption": 3.9,
+   "isWideBody": false,
+   "category": "narrow",
+   "basePrice": 570,
+   "price": 570,
+   "eq": {
+    "version": 1,
+    "winglets": false,
+    "engineProfile": "standard",
+    "wifi": false,
+    "ptv": false
+   },
+   "quote": {
+    "totalPrice": 0,
+    "equipmentCost": 0,
+    "installationCost": 0,
+    "changes": []
+   },
+   "caps": {
+    "supported": false,
+    "winglets": false,
+    "wifi": false,
+    "ptv": false,
+    "engineProfiles": [
+     "standard"
+    ]
+   }
+  },
+  {
+   "name": "MD-90-30",
+   "seats": 172,
+   "range": 4550,
+   "cruiseSpeed": 810,
+   "fuelConsumption": 3.95,
+   "isWideBody": false,
+   "category": "narrow",
+   "basePrice": 610,
+   "price": 610,
+   "eq": {
+    "version": 1,
+    "winglets": false,
+    "engineProfile": "standard",
+    "wifi": false,
+    "ptv": false
+   },
+   "quote": {
+    "totalPrice": 0,
+    "equipmentCost": 0,
+    "installationCost": 0,
+    "changes": []
+   },
+   "caps": {
+    "supported": false,
+    "winglets": false,
+    "wifi": false,
+    "ptv": false,
+    "engineProfiles": [
+     "standard"
+    ]
+   }
+  },
+  {
+   "name": "B767-300ER",
+   "seats": 250,
+   "range": 11070,
+   "cruiseSpeed": 850,
+   "fuelConsumption": 5.7,
+   "isWideBody": true,
+   "category": "midWide",
+   "basePrice": 1080,
+   "price": 1080,
+   "eq": {
+    "version": 1,
+    "winglets": false,
+    "engineProfile": "standard",
+    "wifi": false,
+    "ptv": false
+   },
+   "quote": {
+    "totalPrice": 0,
+    "equipmentCost": 0,
+    "installationCost": 0,
+    "changes": []
+   },
+   "caps": {
+    "supported": false,
+    "winglets": false,
+    "wifi": false,
+    "ptv": false,
+    "engineProfiles": [
+     "standard"
+    ]
+   }
+  },
+  {
+   "name": "B787-8",
+   "seats": 265,
+   "range": 14820,
+   "cruiseSpeed": 900,
+   "fuelConsumption": 6.2,
+   "isWideBody": true,
+   "category": "midWide",
+   "basePrice": 1720,
+   "price": 1720,
+   "eq": {
+    "version": 1,
+    "winglets": true,
+    "engineProfile": "efficiency",
+    "wifi": true,
+    "ptv": true
+   },
+   "quote": {
+    "totalPrice": 342.28,
+    "equipmentCost": 309.6,
+    "installationCost": 32.68,
+    "changes": [
+     "wifi",
+     "ptv",
+     "engineProfile"
+    ]
+   },
+   "caps": {
+    "supported": true,
+    "winglets": false,
+    "wifi": true,
+    "ptv": true,
+    "engineProfiles": [
+     "standard",
+     "efficiency",
+     "reliability"
+    ]
+   }
+  },
+  {
+   "name": "A330-200",
+   "seats": 270,
+   "range": 13450,
+   "cruiseSpeed": 870,
+   "fuelConsumption": 7.2,
+   "isWideBody": true,
+   "category": "midWide",
+   "basePrice": 1600,
+   "price": 1600,
+   "eq": {
+    "version": 1,
+    "winglets": true,
+    "engineProfile": "efficiency",
+    "wifi": true,
+    "ptv": true
+   },
+   "quote": {
+    "totalPrice": 318.4,
+    "equipmentCost": 288,
+    "installationCost": 30.4,
+    "changes": [
+     "wifi",
+     "ptv",
+     "engineProfile"
+    ]
+   },
+   "caps": {
+    "supported": true,
+    "winglets": false,
+    "wifi": true,
+    "ptv": true,
+    "engineProfiles": [
+     "standard",
+     "efficiency",
+     "reliability"
+    ]
+   }
+  },
+  {
+   "name": "L-1011-500",
+   "seats": 310,
+   "range": 9900,
+   "cruiseSpeed": 890,
+   "fuelConsumption": 8.4,
+   "isWideBody": true,
+   "category": "midWide",
+   "basePrice": 1100,
+   "price": 1100,
+   "eq": {
+    "version": 1,
+    "winglets": false,
+    "engineProfile": "standard",
+    "wifi": false,
+    "ptv": false
+   },
+   "quote": {
+    "totalPrice": 0,
+    "equipmentCost": 0,
+    "installationCost": 0,
+    "changes": []
+   },
+   "caps": {
+    "supported": false,
+    "winglets": false,
+    "wifi": false,
+    "ptv": false,
+    "engineProfiles": [
+     "standard"
+    ]
+   }
+  },
+  {
+   "name": "Il-96-300",
+   "seats": 300,
+   "range": 11000,
+   "cruiseSpeed": 850,
+   "fuelConsumption": 9.2,
+   "isWideBody": true,
+   "category": "midWide",
+   "basePrice": 980,
+   "price": 980,
+   "eq": {
+    "version": 1,
+    "winglets": false,
+    "engineProfile": "standard",
+    "wifi": false,
+    "ptv": false
+   },
+   "quote": {
+    "totalPrice": 0,
+    "equipmentCost": 0,
+    "installationCost": 0,
+    "changes": []
+   },
+   "caps": {
+    "supported": false,
+    "winglets": false,
+    "wifi": false,
+    "ptv": false,
+    "engineProfiles": [
+     "standard"
+    ]
+   }
+  },
+  {
+   "name": "Il-86",
+   "seats": 340,
+   "range": 5000,
+   "cruiseSpeed": 870,
+   "fuelConsumption": 10,
+   "isWideBody": true,
+   "category": "largeWide",
+   "basePrice": 1200,
+   "price": 1200,
+   "eq": {
+    "version": 1,
+    "winglets": false,
+    "engineProfile": "standard",
+    "wifi": false,
+    "ptv": false
+   },
+   "quote": {
+    "totalPrice": 0,
+    "equipmentCost": 0,
+    "installationCost": 0,
+    "changes": []
+   },
+   "caps": {
+    "supported": false,
+    "winglets": false,
+    "wifi": false,
+    "ptv": false,
+    "engineProfiles": [
+     "standard"
+    ]
+   }
+  },
+  {
+   "name": "DC-10-30",
+   "seats": 350,
+   "range": 9600,
+   "cruiseSpeed": 940,
+   "fuelConsumption": 9.8,
+   "isWideBody": true,
+   "category": "largeWide",
+   "basePrice": 1300,
+   "price": 1300,
+   "eq": {
+    "version": 1,
+    "winglets": false,
+    "engineProfile": "standard",
+    "wifi": false,
+    "ptv": false
+   },
+   "quote": {
+    "totalPrice": 0,
+    "equipmentCost": 0,
+    "installationCost": 0,
+    "changes": []
+   },
+   "caps": {
+    "supported": false,
+    "winglets": false,
+    "wifi": false,
+    "ptv": false,
+    "engineProfiles": [
+     "standard"
+    ]
+   }
+  },
+  {
+   "name": "MD-11",
+   "seats": 390,
+   "range": 12630,
+   "cruiseSpeed": 920,
+   "fuelConsumption": 9.4,
+   "isWideBody": true,
+   "category": "largeWide",
+   "basePrice": 1440,
+   "price": 1440,
+   "eq": {
+    "version": 1,
+    "winglets": false,
+    "engineProfile": "standard",
+    "wifi": false,
+    "ptv": false
+   },
+   "quote": {
+    "totalPrice": 0,
+    "equipmentCost": 0,
+    "installationCost": 0,
+    "changes": []
+   },
+   "caps": {
+    "supported": false,
+    "winglets": false,
+    "wifi": false,
+    "ptv": false,
+    "engineProfiles": [
+     "standard"
+    ]
+   }
+  },
+  {
+   "name": "A340-600",
+   "seats": 430,
+   "range": 14450,
+   "cruiseSpeed": 900,
+   "fuelConsumption": 10.2,
+   "isWideBody": true,
+   "category": "quad",
+   "basePrice": 3180,
+   "price": 3180,
+   "eq": {
+    "version": 1,
+    "winglets": false,
+    "engineProfile": "standard",
+    "wifi": false,
+    "ptv": false
+   },
+   "quote": {
+    "totalPrice": 0,
+    "equipmentCost": 0,
+    "installationCost": 0,
+    "changes": []
+   },
+   "caps": {
+    "supported": false,
+    "winglets": false,
+    "wifi": false,
+    "ptv": false,
+    "engineProfiles": [
+     "standard"
+    ]
+   }
+  },
+  {
+   "name": "B747-400",
+   "seats": 460,
+   "range": 13490,
+   "cruiseSpeed": 900,
+   "fuelConsumption": 13.5,
+   "isWideBody": true,
+   "category": "quad",
+   "basePrice": 4150,
+   "price": 4150,
+   "eq": {
+    "version": 1,
+    "winglets": false,
+    "engineProfile": "standard",
+    "wifi": false,
+    "ptv": false
+   },
+   "quote": {
+    "totalPrice": 0,
+    "equipmentCost": 0,
+    "installationCost": 0,
+    "changes": []
+   },
+   "caps": {
+    "supported": false,
+    "winglets": false,
+    "wifi": false,
+    "ptv": false,
+    "engineProfiles": [
+     "standard"
+    ]
+   }
+  }
+ ],
+ "bases": [
+  {
+   "name": "上海浦东",
+   "level": "hub",
+   "throughput": 95494003,
+   "isInternational": false,
+   "region": "china",
+   "minInterval": 20,
+   "hangarCap": 0,
+   "hangarUsed": 0,
+   "hangarLeft": 0,
+   "parkedCap": 5,
+   "parkedNow": 2,
+   "parkedLeft": 3
+  }
+ ],
+ "routes": [
+  {
+   "id": "rt_1792391226221_6",
+   "from": "上海浦东",
+   "to": "拉萨贡嘎",
+   "km": 2967,
+   "demand": 1042,
+   "remaining": 520,
+   "seatsWeek": 0,
+   "flightsWeek": 0,
+   "wk": null,
+   "fromLevel": "hub",
+   "toLevel": "normal",
+   "toIntl": false,
+   "needFrom": 20,
+   "needTo": 40
+  },
+  {
+   "id": "rt_1792391227334_7",
+   "from": "拉萨贡嘎",
+   "to": "上海浦东",
+   "km": 2967,
+   "demand": 1042,
+   "remaining": 520,
+   "seatsWeek": 0,
+   "flightsWeek": 0,
+   "wk": null,
+   "fromLevel": "normal",
+   "toLevel": "hub",
+   "toIntl": false,
+   "needFrom": 40,
+   "needTo": 20
+  }
+ ],
+ "cost": null,
+ "groundTurn": 50,
+ "reputation": 22.414213562373096,
+ "thresholds": {
+  "domestic": 180,
+  "international": 250
+ }
+}

@@ -1,0 +1,32 @@
+{
+ "ok": true,
+ "date": "2027-01-01",
+ "gameTime": "2026-12-31T16:00:00.000Z",
+ "cash": 1440.66,
+ "reputation": 22.41,
+ "fleet": 2,
+ "legsPerDay": 0,
+ "bases": {
+  "上海浦东": 2
+ },
+ "homeBase": "上海浦东",
+ "healthMin": 100,
+ "healthAvg": 100,
+ "delays": {
+  "medium": 0,
+  "severe": 0
+ },
+ "fuel": {
+  "liters": 1000000,
+  "capacity": 1000000,
+  "perDay": 0,
+  "days": null
+ },
+ "fuelPrice": 2.969013418490409,
+ "points": 4,
+ "routes": 2,
+ "unlocked": [
+  "china"
+ ],
+ "region": "china"
+}

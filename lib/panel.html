@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>航迹云途 · 辅助面板</title>
+<style>
+  :root { color-scheme: dark; }
+  body { margin:0; font:13px/1.6 -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif; background:#0e1218; color:#e6edf7; }
+  header { padding:14px 18px; border-bottom:1px solid #1e2836; display:flex; align-items:center; gap:12px; }
+  h1 { font-size:14px; margin:0; font-weight:600; color:#8fb8ff; }
+  .dot { width:8px; height:8px; border-radius:50%; background:#666; display:inline-block; }
+  .dot.ok { background:#4ade80; box-shadow:0 0 8px #4ade80; }
+  .dot.bad { background:#f87171; }
+  main { padding:16px 18px; display:grid; gap:16px; grid-template-columns: minmax(320px, 1fr) minmax(320px, 1fr); }
+  @media (max-width: 860px) { main { grid-template-columns: 1fr; } }
+  .card { background:#131a24; border:1px solid #1e2836; border-radius:10px; padding:12px 14px; }
+  .card h2 { font-size:12px; margin:0 0 10px; color:#7f93ad; font-weight:600; letter-spacing:.04em; }
+  .grid { display:grid; grid-template-columns:1fr auto; gap:4px 10px; font-variant-numeric:tabular-nums; }
+  .k { color:#8b9bb0; } .v { text-align:right; font-weight:600; }
+  .v.bad { color:#ff9a9a; }
+  .btns { display:flex; flex-wrap:wrap; gap:8px; }
+  button { background:#1b2b45; border:1px solid #2c4a72; color:#dbe7fb; border-radius:8px; padding:7px 12px; cursor:pointer; font:12px inherit; }
+  button:hover { background:#254068; }
+  button:disabled { opacity:.45; cursor:default; }
+  pre { margin:0; max-height:340px; overflow:auto; font:11.5px/1.55 "SF Mono",Menlo,monospace; color:#a9c1dd; white-space:pre-wrap; }
+  .err { color:#ff9a9a; }
+  .hint { color:#7f93ad; font-size:11.5px; margin-top:8px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>航迹云途 · 辅助面板</h1>
+  <span id="conn" class="dot"></span>
+  <span id="connText" style="color:#8b9bb0">检测中…</span>
+  <span style="flex:1"></span>
+  <span id="date" style="color:#8b9bb0"></span>
+</header>
+<main>
+  <section class="card">
+    <h2>盘面</h2>
+    <div id="panels" class="grid"><div class="k">加载中…</div><div class="v"></div></div>
+    <div class="hint" id="warn"></div>
+  </section>
+
+  <section class="card">
+    <h2>操作</h2>
+    <div class="btns">
+      <button data-cmd="daily" data-arg='{"n":1}'>推进 1 天</button>
+      <button data-cmd="daily5">推到 5 日节点</button>
+      <button data-cmd="routesetup">航线设置（票价/餐食/快线）</button>
+      <button data-cmd="inspect">预约检修</button>
+      <button data-cmd="audit">时刻表自检</button>
+      <button data-cmd="save">存档</button>
+      <button data-cmd="plan">排班方案（停场机）</button>
+      <button data-cmd="board">日贡献看板</button>
+      <button data-cmd="health">排班体检</button>
+      <button data-cmd="buyplan">买机清单</button>
+      <button data-cmd="routeplan">开线清单</button>
+      <button data-cmd="fuelplan">油库方案</button>
+      <button data-cmd="expand">今日待办</button>
+    </div>
+    <div class="hint">排班方案只生成、不写入；确认后由对话侧 `hjyt_apply_sched` 执行。买机/开线同理：面板只看清单，写操作由对话侧 `hjyt_buy_apply` / `hjyt_route_apply` 确认后执行。</div>
+  </section>
+
+  <section class="card" style="grid-column:1/-1">
+    <h2>洞察（看板 / 体检 / 向导）</h2>
+    <div id="insight" class="grid"><div class="k">点上面「日贡献看板 / 排班体检 / 买机清单 / 开线清单」加载</div><div class="v"></div></div>
+  </section>
+
+  <section class="card" style="grid-column:1/-1">
+    <h2>输出 / 日志</h2>
+    <pre id="out">就绪。</pre>
+  </section>
+</main>
+<script>
+const $ = (id) => document.getElementById(id)
+const out = $('out')
+function logLine(s) { out.textContent = s + '\n\n' + out.textContent.slice(0, 6000) }
+
+function renderStatus(res) {
+  const panels = $('panels')
+  const warn = $('warn')
+  if (!res || !res.ok) {
+    $('conn').className = 'dot bad'
+    $('connText').textContent = '未连接'
+    panels.innerHTML = '<div class="k">连不上游戏</div><div class="v err">' + ((res && (res.error || res.reason)) || '') + '</div>'
+    warn.textContent = (res && res.hint) || ''
+    return
+  }
+  $('conn').className = 'dot ok'
+  $('connText').textContent = '已连接'
+  const s = res.status
+  $('date').textContent = s.date + ' · 账本 ' + res.ledgerDays + ' 天'
+  const money = (v) => v >= 10000 ? (v / 10000).toFixed(2) + ' 亿' : v.toFixed(0) + ' 万'
+  const rows = [
+    ['现金', money(s.cash), ''],
+    ['声誉', s.reputation.toFixed(2) + '%', ''],
+    ['机队 / 班次', s.fleet + ' 架 / ' + s.legsPerDay, ''],
+    ['延误 中/严', s.delays.medium + ' / ' + s.delays.severe, (s.delays.severe || s.delays.medium) ? 'bad' : ''],
+    ['健康 最低/平均', s.healthMin.toFixed(1) + ' / ' + s.healthAvg, s.healthMin < 85 ? 'bad' : ''],
+    ['油量', (s.fuel.liters / 10000).toFixed(0) + ' / ' + (s.fuel.capacity / 10000).toFixed(0) + ' 万升（' + (s.fuel.days == null ? '—' : s.fuel.days) + ' 天）', s.fuel.days != null && s.fuel.days < 3 ? 'bad' : ''],
+    ['油价', s.fuelPrice ? s.fuelPrice.toFixed(2) + ' 元/L' : '--', ''],
+    ['机场点数', String(s.points), ''],
+    ['故障系统', s.faultSystem === false ? '已关闭' : '开启', ''],
+    ['已解锁区域', (s.unlocked || []).join(', '), ''],
+  ]
+  panels.innerHTML = rows.map(([k, v, cls]) => '<div class="k">' + k + '</div><div class="v ' + cls + '">' + v + '</div>').join('')
+  const w = []
+  if (s.delays.severe) w.push('有严重延误（不可逆）')
+  if (s.fuel.days != null && s.fuel.days < 3) w.push('油量 < 3 天')
+  if (s.healthMin < 85) w.push('有飞机健康 < 85')
+  if (s.cash > 1500) w.push('现金闲置')
+  if (s.faultSystem !== false) w.push('故障系统是开着的（应为 false）')
+  warn.textContent = w.length ? '⚠ ' + w.join('；') : '✓ 无告警'
+}
+
+function renderInsight(rows) {
+  const box = $('insight')
+  if (!rows || !rows.length) { box.innerHTML = '<div class="k">无数据</div><div class="v"></div>'; return }
+  box.innerHTML = rows.map(([k, v, cls]) => '<div class="k">' + k + '</div><div class="v ' + (cls || '') + '">' + v + '</div>').join('')
+}
+
+function insightFor(cmd, res) {
+  if (!res || !res.ok) return [['失败', String((res && (res.reason || res.error)) || '未知').slice(0, 120), 'err']]
+  const n = (v, d) => (v == null || isNaN(Number(v)) ? (d || '--') : Number(v))
+  if (cmd === 'routesetup') {
+    const rows = [['已设置', String(n(res.total, 0)) + ' 条 · 实际改动 ' + String(n(res.changed, 0)) + ' 条', '']]
+    for (const r of (res.routes || []).slice(0, 5)) rows.push([r.from + '→' + r.to, (r.ok ? '✓' : '✗ ' + (r.err || '')) + ' · ' + (r.catering || '-') + ' · ' + (r.express || '-')] )
+    return rows
+  }
+  if (cmd === 'board') {
+    const t = res.today || {}
+    const rows = [
+      ['今日收入', n(t.revenue) + ' 万', ''],
+      ['今日净利', n(t.net) + ' 万', ''],
+      ['7 日均净利', n(res.avgNet) + ' 万/日', ''],
+      ['油量可用', n((res.fuel || {}).days) + ' 天', n((res.fuel || {}).days) < 3 ? 'bad' : ''],
+      ['弱航线', ((res.routes || {}).weak || []).length + ' 条', ((res.routes || {}).weak || []).length ? 'bad' : ''],
+    ]
+    const w = ((res.routes || {}).weak || []).slice(0, 4).map((r) => r.from + '→' + r.to + '（' + (r.flags || []).join('/') + '）')
+    if (w.length) rows.push(['弱航线明细', w.join('<br>'), 'bad'])
+    return rows
+  }
+  if (cmd === 'health') {
+    const s = res.summary || {}
+    return [
+      ['红线数', String(n(res.critical, 0)), n(res.critical, 0) ? 'bad' : ''],
+      ['完全闲置', String(n(s.idle, 0)), n(s.idle, 0) ? 'bad' : ''],
+      ['欠排（段数少）', String(n(s.underused, 0)), ''],
+      ['末班偏早', String(n(s.earlyLast, 0)), ''],
+      ['首班过晚', String(n(s.lateFirst, 0)), ''],
+      ['夜停超容', String(n(s.overflow, 0)), n(s.overflow, 0) ? 'bad' : ''],
+      ['建议', (res.advice || []).slice(0, 4).join('<br>') || '--', ''],
+    ]
+  }
+  if (cmd === 'buyplan') {
+    const c = (res.candidates || []).slice(0, 3)
+    const rows = [['候选', String(n(res.totalCandidates, 0)) + ' 条 · 预算 ' + n(res.budget) + ' 万', '']]
+    for (const x of c) rows.push([x.model + ' @' + x.base, x.seats + '座 · ' + x.paybackDays + ' 天回本 · ' + x.legsPerDay + ' 段/日'])
+    return rows
+  }
+  if (cmd === 'routeplan') {
+    const c = (res.candidates || []).slice(0, 4)
+    const rows = [['匹配', String(n(res.matched, 0)) + ' 条（出港 ' + (res.froms || []).join('/') + '）', '']]
+    for (const x of c) rows.push([x.from + '→' + x.to, x.km + 'km · 需求 ' + x.own + ' · 建议 ' + x.suggestModel + ' ' + x.suggestSeats + '座×' + x.suggestFlightsPerDay + '/日'])
+    return rows
+  }
+  if (cmd === 'fuelplan') {
+    const up = res.upgrade || {}, rf = res.refill || {}
+    const rows = [
+      ['可飞', n(res.fuelDays) + ' 天（红线 ≥' + n(res.targetDays, 3) + '）', n(res.fuelDays) < 3 ? 'bad' : ''],
+      ['满库', n(res.capacityDays) + ' 天', n(res.capacityDays) < 3 ? 'bad' : ''],
+      ['油价', n(res.price) + ' 元/升 · ' + (res.priceBand === 'cheap' ? '便宜（加满）' : res.priceBand === 'expensive' ? '偏贵（只补 1.5 天）' : '正常（补 3 天）'), ''],
+      ['扩容', (up.steps || []).length ? ('+' + Math.round(((up.capAfter || 0) - (res.capacity || 0)) / 10000) + ' 万升 · ' + n(up.cost, 0) + ' 万') : '不需要', up.stillShort ? 'bad' : ''],
+      ['补油', rf.liters ? (Math.round(rf.liters / 10000) + ' 万升 · ' + n(rf.cost, 0) + ' 万') : '不需要', ''],
+      ['合计', n(res.totalCost, 0) + ' 万 · 剩余 ' + n(res.cashAfter, 0) + ' 万', ''],
+    ]
+    return rows
+  }
+  if (cmd === 'expand') {
+    const s = res.summary || {}
+    const rows = [
+      ['红线条数', String((res.blockers || []).length), (res.blockers || []).length ? 'bad' : ''],
+      ['步骤', String(n(s.steps, 0)) + ' 步（可执行 ' + n(s.ready, 0) + '）', ''],
+      ['计划花费', n(s.plannedCost, 0) + ' 万 · 剩余 ' + n(s.cashAfter, 0) + ' 万', ''],
+      ['油', n(s.fuelDays) + ' 天 / 满库 ' + n(s.capacityDays) + ' 天', n(s.fuelDays) < 3 ? 'bad' : ''],
+    ]
+    for (const st of (res.steps || []).slice(0, 8)) rows.push(['· ' + st.kind, (st.ready ? '✓ ' : '✗ ') + st.title + (st.cost ? '（' + st.cost + ' 万）' : '') + (st.reason ? ' — ' + st.reason : ''), st.ready ? '' : 'bad'])
+    for (const b of (res.blockers || []).slice(0, 4)) rows.push(['⚠ 红线', b, 'bad'])
+    return rows
+  }
+  return []
+}
+
+async function refresh() {
+  try {
+    const r = await fetch('/hjyt/state', { cache: 'no-store' })
+    renderStatus(await r.json())
+  } catch (e) {
+    renderStatus({ ok: false, error: String(e) })
+  }
+}
+
+document.querySelectorAll('button[data-cmd]').forEach((b) => {
+  b.onclick = async () => {
+    const cmd = b.dataset.cmd
+    const arg = b.dataset.arg ? JSON.parse(b.dataset.arg) : {}
+    const label = b.textContent
+    b.disabled = true
+    b.textContent = '执行中…'
+    try {
+      const r = await fetch('/hjyt/cmd', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(Object.assign({ cmd }, arg)) })
+      const res = await r.json()
+      logLine('[' + new Date().toLocaleTimeString() + '] ' + label + ' →\n' + JSON.stringify(res, null, 1).slice(0, 4000))
+      const ins = insightFor(cmd, res)
+      if (ins.length) renderInsight(ins)
+      await refresh()
+    } catch (e) {
+      logLine('[' + label + '] 失败：' + e)
+    } finally {
+      b.disabled = false
+      b.textContent = label
+    }
+  }
+})
+
+refresh()
+setInterval(refresh, 5000)
+</script>
+</body>
+</html>

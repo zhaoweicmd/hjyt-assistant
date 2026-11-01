@@ -1,0 +1,13 @@
+# 依赖与运行态（插件以 link 方式安装，node_modules 由宿主 profile 提供）
+node_modules/
+
+# 运行态 / 日志 / 快照 / 体检基线
+.plugin-state/
+data/
+*.log
+
+# 编辑器与系统
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

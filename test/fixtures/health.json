@@ -1,0 +1,113 @@
+{
+ "ok": true,
+ "date": "2027-01-01",
+ "fleet": 2,
+ "legsDay0": 0,
+ "groundTurn": 50,
+ "aircraft": [
+  {
+   "id": "ac_1792391193626_1",
+   "reg": "B737 MAX 8-001",
+   "base": "上海浦东",
+   "model": "B737 MAX 8",
+   "seats": 180,
+   "wide": false,
+   "status": "parked",
+   "health": 100,
+   "legs": 0,
+   "first": null,
+   "last": null,
+   "minStop": null,
+   "turnWant": 60,
+   "blockMin": 0,
+   "util": 0,
+   "spanMin": null,
+   "routes": []
+  },
+  {
+   "id": "ac_1792391193626_2",
+   "reg": "C909-001",
+   "base": "上海浦东",
+   "model": "C909",
+   "seats": 90,
+   "wide": false,
+   "status": "parked",
+   "health": 100,
+   "legs": 0,
+   "first": null,
+   "last": null,
+   "minStop": null,
+   "turnWant": 60,
+   "blockMin": 0,
+   "util": 0,
+   "spanMin": null,
+   "routes": []
+  }
+ ],
+ "airports": [
+  {
+   "name": "上海浦东",
+   "parked": 2,
+   "parkedCap": 5,
+   "over": 0,
+   "hangarCap": 0,
+   "idle": [
+    "B737 MAX 8-001",
+    "C909-001"
+   ]
+  }
+ ],
+ "gaps": {},
+ "issues": {
+  "idle": [
+   {
+    "id": "ac_1792391193626_1",
+    "reg": "B737 MAX 8-001",
+    "base": "上海浦东",
+    "model": "B737 MAX 8",
+    "seats": 180,
+    "wide": false,
+    "status": "parked",
+    "health": 100,
+    "legs": 0,
+    "first": null,
+    "last": null,
+    "minStop": null,
+    "turnWant": 60,
+    "blockMin": 0,
+    "util": 0,
+    "spanMin": null,
+    "routes": []
+   },
+   {
+    "id": "ac_1792391193626_2",
+    "reg": "C909-001",
+    "base": "上海浦东",
+    "model": "C909",
+    "seats": 90,
+    "wide": false,
+    "status": "parked",
+    "health": 100,
+    "legs": 0,
+    "first": null,
+    "last": null,
+    "minStop": null,
+    "turnWant": 60,
+    "blockMin": 0,
+    "util": 0,
+    "spanMin": null,
+    "routes": []
+   }
+  ],
+  "underused": [],
+  "tightStop": [],
+  "overflow": []
+ },
+ "money": 1440.6599999999999,
+ "reputation": 22.414213562373096,
+ "routes": 2,
+ "delay": {
+  "med": 0,
+  "sev": 0
+ }
+}

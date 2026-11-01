@@ -1,0 +1,40 @@
+# ============================================================================
+# hjyt-assistant —— 航迹云途辅助插件 bundle patch
+# ============================================================================
+# 安装（本地 link）：
+#   dsh plugin --profile desktop add link:<插件目录绝对路径>
+#
+# 所有 config 项都可省略 —— 省略即自动探测（工作区 / 脚本目录 / 账本 / CDP 端口 / 游戏标签页）。
+# 本文件会随工作区一起同步到每一台电脑，所以这里**不写任何一台机器的绝对路径**，
+# 也不写死任何一局的账本文件名（每个人的账本都不一样）。
+# ============================================================================
+
+- insert:
+    - id: hjyt-assistant
+      name: hjyt-assistant
+      config:
+        # 工作区：auto = 自动探测，多机共用一份配置不会失效。
+        # 想固定的话写自己机器上的绝对路径（可用 ~ / %USERPROFILE%），
+        # 或者直接设环境变量 HJYT_WORKSPACE（优先级最高）。
+        # 解析顺序：HJYT_WORKSPACE > ~/.dsh/hjyt/workspace.txt > 本行 > 自动扫描 > 向上查找
+        workspace: auto
+
+        # ---- 以下全部可省略，注释里是省略时的默认行为 ----
+        # scriptsDir: 脚本与数据        # 自动找含 tick_day.js / daily_check.js 的目录
+        # ledger: <文件名>              # 默认自动：days_*.json 里最近修改、且 ≥64 B、非 .bak/冲突副本的那个；
+        #                               # 都不满意就设 HJYT_LEDGER 或写 ~/.dsh/hjyt/ledger.txt（每台机各自生效）
+        # tickMode: script             # 有 tick_day.js 就用 script，否则 engine
+        # dataDir: 脚本与数据            # 有脚本目录用它，否则 工作区/.hjyt
+        #                               # 日志/快照/体检基线不放这里，而是放 dataDir/.plugin-state/<主机名>/
+        # cdpHost: 127.0.0.1           # 默认 127.0.0.1
+        # cdpPort: 9222                # 默认 9222，并按 9222→9223→9222→9224→9225 探测
+        # gameHostHints: ['hangjiyuntu.cn']  # 默认内置域名线索 + 标题「航迹云途」+ 逐页探 GameState
+
+        # ---- 排班参数（省略即默认） ----
+        # turnWide: 75                 # 宽体过站分钟
+        # turnNarrow: 60               # 窄体过站分钟（引擎下限 GROUND_TURNAROUND=50）
+        # firstMin: 5                  # 首班最早起飞
+        # lastArr: 1390                # 末班最晚落地（23:10）
+        # maxLegs: 10                  # 单机每日最多段数
+        # cashIdle: 1500               # HUD「现金闲置」提醒阈值（万）
+        # autoQueue: true              # 是否每 2.5 秒轮询 HUD 命令队列
